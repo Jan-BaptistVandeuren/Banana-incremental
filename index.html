@@ -1,0 +1,36 @@
+<HTML>
+    <head>
+        <title>Clicker Game</title>
+    </head>
+
+    <body>
+        <p>Inventory</p>
+        <p>Money : <span id="span_money"> 0 </span> + <span id="span_money/s">0</span> per second. </p>
+        <p>Bananas : <span id="span_bananas"> 0 </span> + <span id="span_bananas/s"> 0 </span> per second. </p>
+        <p>Banana slices <span id="span_bSLices"> 0 </span> + <span id="span_bSLices/s"> 0 </span> per second. </p>
+        <p>Banana Smoothies <span id="span_bSmoothies"> 0 </span> + <span id="span_bSmoothies/s"> 0 </span> per second. </p>
+
+        <img src="src/images/Banana.png" onclick="ClickItem('banana_click')">
+
+        <script>
+            var money = 0;
+            var bananas = 0;
+            var bSLices = 0;
+
+            var bananasOnClick = 1;
+
+            function ClickItem(clickedItem){
+                if(clickedItem == 'banana_click'){
+                    bananas = bananas + bananasOnClick;
+                    document.getElementById("span_bananas").innerHTML = bananas;
+                }else if(clickedItem == 2){
+                    alert("type 2");
+                }else{
+                    alert("wrong item");
+                }
+
+            }
+
+        </script>
+    </body>
+</HTML>
