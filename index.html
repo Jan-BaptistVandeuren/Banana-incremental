@@ -7,24 +7,48 @@
         <p>Inventory</p>
         <p>Money : <span id="span_money"> 0 </span> + <span id="span_money/s">0</span> per second. </p>
         <p>Bananas : <span id="span_bananas"> 0 </span> + <span id="span_bananas/s"> 0 </span> per second. </p>
-        <p>Banana slices <span id="span_bSLices"> 0 </span> + <span id="span_bSLices/s"> 0 </span> per second. </p>
-        <p>Banana Smoothies <span id="span_bSmoothies"> 0 </span> + <span id="span_bSmoothies/s"> 0 </span> per second. </p>
+        <p>Banana slices <span id="span_bananaSlices"> 0 </span> + <span id="span_bananaSlices/s"> 0 </span> per second. </p>
+        <p>Banana Smoothies <span id="span_bananaSmoothies"> 0 </span> + <span id="span_bananaSmoothies/s"> 0 </span> per second. </p>
 
         <img src="src/images/Banana.png" onclick="ClickItem('banana_click')">
+        <img src="src/images/BananaSliced.png" onclick="ClickItem('bananaSliced_click')">
+        <img src="src/images/BananaSmoothie.png" onclick="ClickItem('bananaSmoothie_click')">
 
         <script>
             var money = 0;
             var bananas = 0;
-            var bSLices = 0;
+            var bananaSlices = 0;
+            var bananaSmoothies = 0;
 
             var bananasOnClick = 1;
+            var bananaSlicesOnClick = 1;
+            var slicesToSmoothiesOnClick = 1;
+
+            var bananasToSliceCost = 5;
+            var slicesToSmoothiesCost = 5;
 
             function ClickItem(clickedItem){
                 if(clickedItem == 'banana_click'){
-                    bananas = bananas + bananasOnClick;
+                    bananas += bananasOnClick;
                     document.getElementById("span_bananas").innerHTML = bananas;
-                }else if(clickedItem == 2){
-                    alert("type 2");
+                }else if(clickedItem == 'bananaSliced_click'){
+                    if(bananas >= bananasToSliceCost){
+                        bananas -= bananasToSliceCost;
+                        bananaSlices += bananaSlicesOnClick;
+                        document.getElementById("span_bananas").innerHTML = bananas;
+                        document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
+                    }else{
+                        alert("Not enough bananas, you need " + bananasToSliceCost);
+                    }
+                }else if(clickedItem == 'bananaSmoothie_click'){
+                    if(bananaSlices >= slicesToSmoothiesCost){
+                        bananaSlices -= slicesToSmoothiesCost;
+                        bananaSmoothies += slicesToSmoothiesOnClick;
+                        document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
+                        document.getElementById("span_bananaSmoothies").innerHTML = bananaSmoothies;
+                    }else{
+                        alert("Not enough slices, you need " + slicesToSmoothiesCost);
+                    }
                 }else{
                     alert("wrong item");
                 }
