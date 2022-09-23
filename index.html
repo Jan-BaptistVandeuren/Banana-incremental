@@ -5,10 +5,10 @@
 
     <body>
         <p>Inventory</p>
-        <p>Money : <span id="span_money"> 0 </span> + <span id="span_money/s">0</span> per second. </p>
-        <p>Bananas : <span id="span_bananas"> 0 </span> + <span id="span_bananas/s"> 0 </span> per second. </p>
-        <p>Banana slices <span id="span_bananaSlices"> 0 </span> + <span id="span_bananaSlices/s"> 0 </span> per second. </p>
-        <p>Banana Smoothies <span id="span_bananaSmoothies"> 0 </span> + <span id="span_bananaSmoothies/s"> 0 </span> per second. </p>
+        <p>Money : <span id="span_money"> 0 </span> <!-- + <span id="span_money/s">0</span> per second. --> </p>
+        <p>Bananas : <span id="span_bananas"> 0 </span> <!-- + <span id="span_bananas/s"> 0 </span> per second. --> </p>
+        <p>Banana slices <span id="span_bananaSlices"> 0 </span> <!-- + <span id="span_bananaSlices/s"> 0 </span> per second. --> </p>
+        <p>Banana Smoothies <span id="span_bananaSmoothies"> 0 </span> <!-- + <span id="span_bananaSmoothies/s"> 0 </span> per second. --> </p>
 
         <img src="src/images/Banana.png" onclick="ClickItem('banana_click')">
         <img src="src/images/BananaSliced.png" onclick="ClickItem('bananaSliced_click')">
@@ -30,13 +30,10 @@
             function ClickItem(clickedItem){
                 if(clickedItem == 'banana_click'){
                     bananas += bananasOnClick;
-                    document.getElementById("span_bananas").innerHTML = bananas;
                 }else if(clickedItem == 'bananaSliced_click'){
                     if(bananas >= bananasToSliceCost){
                         bananas -= bananasToSliceCost;
                         bananaSlices += bananaSlicesOnClick;
-                        document.getElementById("span_bananas").innerHTML = bananas;
-                        document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
                     }else{
                         alert("Not enough bananas, you need " + bananasToSliceCost);
                     }
@@ -44,8 +41,6 @@
                     if(bananaSlices >= slicesToSmoothiesCost){
                         bananaSlices -= slicesToSmoothiesCost;
                         bananaSmoothies += slicesToSmoothiesOnClick;
-                        document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
-                        document.getElementById("span_bananaSmoothies").innerHTML = bananaSmoothies;
                     }else{
                         alert("Not enough slices, you need " + slicesToSmoothiesCost);
                     }
@@ -53,6 +48,15 @@
                     alert("wrong item");
                 }
 
+                UpdateData();
+
+            }
+
+            function UpdateData(){
+                document.getElementById("span_bananas").innerHTML = money;
+                document.getElementById("span_bananas").innerHTML = bananas;
+                document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
+                document.getElementById("span_bananaSmoothies").innerHTML = bananaSmoothies;
             }
 
         </script>
