@@ -1,0 +1,102 @@
+<HTML>
+    <head>
+        <title>Clicker Game</title>
+    </head>
+
+    <body>
+        <h1><u>Inventory</u></h1>
+        <h2>Monkeys</h2>
+            <p>You have <span id="span_monkeys"> 0 </span> unnasigned monkeys!</p>
+        <h2>Money :</h2>
+            <p><span id="span_money"> 0 </span> $ </p>
+            <p>with <span id="span_money/s">0</span> per second.</p>
+        <h2>Bananas :</h2>
+            <p><span id="span_bananas"> 0 </span> bananas</p>
+            <p>with <span id="span_bananas/s"> 0 </span> per second </p>
+            <p>from <span id="span_delivery_monkeys"> 0 </span> delivery monkeys.</p>
+        <h2>Banana slices :</h2>
+            <p><span id="span_bananaSlices"> 0 </span> banana slices</p>
+            <p>with <span id="span_bananaSlices/s"> 0 </span> per second
+            <p>from <span id="span_slicing_monkeys"> 0 </span> slicing monkeys.
+        <h2>Banana Smoothies :</h2>
+            <p><span id="span_bananaSmoothies"> 0 </span> smoothies</p>
+            <p>with <span id="span_bananaSmoothies/s"> 0 </span> per second</p>
+            <p>from <span id="span_smoothie_monkeys"> 0 </span> slicing monkeys.</p>
+
+        <img src="../images/Banana.png" onclick="ClickItem('banana_click')">
+        <img src="../images/BananaSliced.png" onclick="ClickItem('bananaSliced_click')">
+        <img src="../images/BananaSmoothie.png" onclick="ClickItem('bananaSmoothie_click')">
+        <img src="../images/Dollar.png" onclick="ClickItem('sell_click')">
+
+        <button>Buy a banana delivery monkey for 1 monkey.</button>
+        <button>Buy a banana slicing monkey for 1 monkey.</button>
+        <button>Buy a smoothie mixing monkey for 1 monkey.</button>
+        <button>Buy a vending machine for 1 monkey and [<span id="span_vending_m_dollar">15</span>]$.</button>
+
+        <script>
+            var money = 0;
+            var bananas = 0;
+            var bananaSlices = 0;
+            var bananaSmoothies = 0;
+            var monkey = 0;
+
+            var bananasOnClick = 1;
+            var bananaSlicesOnClick = 1;
+            var slicesToSmoothiesOnClick = 1;
+            var smoothiesToDollarOnClick = 1;
+
+            var bananasToSliceCost = 5;
+            var slicesToSmoothiesCost = 5;
+            var smoothiesToDollarCost = 5;
+
+            function ClickItem(clickedItem){
+                if(clickedItem == 'banana_click'){
+                    bananas += bananasOnClick;
+                }else if(clickedItem == 'bananaSliced_click'){
+                    if(bananas >= bananasToSliceCost){
+                        bananas -= bananasToSliceCost;
+                        bananaSlices += bananaSlicesOnClick;
+                    }else{
+                        alert("Not enough bananas, you need " + bananasToSliceCost);
+                    }
+                }else if(clickedItem == 'bananaSmoothie_click'){
+                    if(bananaSlices >= slicesToSmoothiesCost){
+                        bananaSlices -= slicesToSmoothiesCost;
+                        bananaSmoothies += slicesToSmoothiesOnClick;
+                    }else{
+                        alert("Not enough slices, you need " + slicesToSmoothiesCost);
+                    }
+                }else if(clickedItem == 'sell_click'){
+                    if(bananaSmoothies >= smoothiesToDollarCost){
+                        bananaSmoothies -= smoothiesToDollarCost;
+                        money += smoothiesToDollarCost;
+                    }else{
+                        alert("Not enough smoothies!");   
+                    }
+                }else{
+                    alert("wrong item");
+                }
+                UpdateData();
+            }
+
+            function BuyAutomation(item_bought){
+                if(itembought == '1'){
+
+                }else if (itembought == '2'){
+
+                }else{
+
+                }
+                UpdateData();
+            }
+
+            function UpdateData(){
+                document.getElementById("span_bananas").innerHTML = money;
+                document.getElementById("span_bananas").innerHTML = bananas;
+                document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
+                document.getElementById("span_bananaSmoothies").innerHTML = bananaSmoothies;
+            }
+
+        </script>
+    </body>
+</HTML>
