@@ -5,38 +5,30 @@ body{
 .menu{
     height: 10%;
     width: 100%;
-    background-color: blueviolet;
 }
 .game{
     height: 90%;
     width: 100%;
-    background-color: brown;
 }
 .sectionRecourcesAndBanana{
     float: left;
     width: 80%;
-    background-color: yellow;
 }
 .sectionResources{
     float: left;
     width: 25%;
-    background-color: blue;
 }
 .sectionBanana{
     float: right;
     width: 75%;
-    background-color: red;
 }
 .sectionActions{
     float: right;
     width: 20%;
-    background-color: green;
     display: inline-grid;
     grid-template-columns: auto auto auto;
 }
 .gridAction{
-    padding: 0.4rem;
-    border: 1px solid black;
     text-align: center;
 }
 .imageBanana{
