@@ -5,35 +5,46 @@
     </head>
 
     <body>
-        <h1><u>Inventory</u></h1>
-        <h2>Monkeys</h2>
-            <p>You have <span id="span_monkeys"> 0 </span> unnasigned monkeys!</p>
-        <h2>Money :</h2>
-            <p><span id="span_money"> 0 </span> $ </p>
-            <p>with <span id="span_money/s">0</span> per second.</p>
-        <h2>Bananas :</h2>
-            <p><span id="span_bananas"> 0 </span> bananas</p>
-            <p>with <span id="span_bananas/s"> 0 </span> per second </p>
-            <p>from <span id="span_delivery_monkeys"> 0 </span> delivery monkeys.</p>
-        <h2>Banana slices :</h2>
-            <p><span id="span_bananaSlices"> 0 </span> banana slices</p>
-            <p>with <span id="span_bananaSlices/s"> 0 </span> per second
-            <p>from <span id="span_slicing_monkeys"> 0 </span> slicing monkeys.
-        <h2>Banana Smoothies :</h2>
-            <p><span id="span_bananaSmoothies"> 0 </span> smoothies</p>
-            <p>with <span id="span_bananaSmoothies/s"> 0 </span> per second</p>
-            <p>from <span id="span_smoothie_monkeys"> 0 </span> slicing monkeys.</p>
-
-        <img src="../images/Banana.png" onclick="ClickItem('banana_click')">
-        <img src="../images/BananaSliced.png" onclick="ClickItem('bananaSliced_click')">
-        <img src="../images/BananaSmoothie.png" onclick="ClickItem('bananaSmoothie_click')">
-        <img src="../images/Dollar.png" onclick="ClickItem('sell_click')">
-
-        <button>Buy a banana delivery monkey for 1 monkey.</button>
-        <button>Buy a banana slicing monkey for 1 monkey.</button>
-        <button>Buy a smoothie mixing monkey for 1 monkey.</button>
-        <button>Buy a vending machine for 1 monkey and [<span id="span_vending_m_dollar">15</span>]$.</button>
-
+        <div class="Menu">
+            <h1>Menu</h1>
+        </div>
+        <div class="Game">
+            <div class="sectionRecourcesAndBanana">
+                <div class="sectionResources">
+                    <h1><u>Inventory</u></h1>
+                    <h2>Monkeys</h2>
+                        <p>You have <span id="span_monkeys"> 0 </span> unnasigned monkeys!</p>
+                    <h2>Money :</h2>
+                        <p><span id="span_money"> 0 </span> $ </p>
+                        <p>with <span id="span_money/s">0</span> per second.</p>
+                    <h2>Bananas :</h2>
+                        <p><span id="span_bananas"> 0 </span> bananas</p>
+                        <p>with <span id="span_bananas/s"> 0 </span> per second </p>
+                        <p>from <span id="span_delivery_monkeys"> 0 </span> delivery monkeys.</p>
+                    <h2>Banana slices :</h2>
+                        <p><span id="span_bananaSlices"> 0 </span> banana slices</p>
+                        <p>with <span id="span_bananaSlices/s"> 0 </span> per second
+                        <p>from <span id="span_slicing_monkeys"> 0 </span> slicing monkeys.
+                    <h2>Banana Smoothies :</h2>
+                        <p><span id="span_bananaSmoothies"> 0 </span> smoothies</p>
+                        <p>with <span id="span_bananaSmoothies/s"> 0 </span> per second</p>
+                        <p>from <span id="span_smoothie_monkeys"> 0 </span> slicing monkeys.</p>
+                </div>
+                <div class="sectionBanana">
+                    <img class="imageBanana" src="../images/Banana.png" onclick="ClickItem('banana_click')">
+                </div>
+            </div>
+            <div class="sectionActions">
+                <img class="gridAction" src="../images/BananaSliced.png" onclick="ClickItem('bananaSliced_click')" width="5%" height="5%">
+                <img class="gridAction" src="../images/BananaSmoothie.png" onclick="ClickItem('bananaSmoothie_click')"width="5%" height="5%">
+                <img class="gridAction" src="../images/Dollar.png" onclick="ClickItem('sell_click')"width="5%" height="5%">
+            
+                <button class="gridAction" >Buy a banana delivery monkey for 1 monkey.</button>
+                <button class="gridAction" >Buy a banana slicing monkey for 1 monkey.</button>
+                <button class="gridAction" >Buy a smoothie mixing monkey for 1 monkey.</button>
+                <button class="gridAction" >Buy a vending machine for 1 monkey and [<span id="span_vending_m_dollar">15</span>]$.</button>
+            </div>
+        </div>
         <script>
             var money = 0;
             var bananas = 0;
