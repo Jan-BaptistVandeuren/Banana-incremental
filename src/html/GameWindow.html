@@ -8,12 +8,12 @@
         <div class="menu">
             <div class="menuLeft">
                 <h1>Menu</h1>
-                <button onclick="ProgressBar('search_bar_monkey')"> Search for monkey</button>
             </div>
-            <div class="menuRight">
-                <div class="monkeySearchBarBackground">
-                    <div class="monkeySearchBarForeground" id="search_bar_monkey" style="height: 24px;width: 0px;"></div>
-                </div>
+            <div class="menuActions">
+                <button class="gridActions" onclick="ProgressBar('search_bar_monkey')"> Search for a monkey</button>
+                <button class="gridActions" onclick="ClickItem('bananaSliced_click')"> Slice a banana</button>
+                <button class="gridActions" onclick="ClickItem('bananaSmoothie_click')"> Make smoothie</button>
+                <button class="gridActions" onclick="ClickItem('sell_click')"> Sell smoothies</button>
             </div>
         </div>
         <div class="Game">
@@ -22,6 +22,11 @@
                     <h1><u>Inventory</u></h1>
                     <h2>Monkeys</h2>
                         <p>You have <span id="span_monkeys"> 0 </span> unnasigned monkeys!</p>
+                        <div class="sectionMonkeyBar">
+                            <div class="monkeySearchBarBackground">
+                                <div class="monkeySearchBarForeground" id="search_bar_monkey" style="height: 24px;width: 0px;"></div>
+                            </div>
+                        </div>
                     <h2>Money :</h2>
                         <p><span id="span_money"> 0 </span> $ </p>
                         <p>with <span id="span_money/s">0</span> per second.</p>
@@ -42,15 +47,23 @@
                     <img class="imageBanana" src="../images/Banana.png" onclick="ClickItem('banana_click')">
                 </div>
             </div>
-            <div class="sectionActions">
-                <img class="gridAction" src="../images/BananaSliced.png" onclick="ClickItem('bananaSliced_click')" width="100%" height="100%">
-                <img class="gridAction" src="../images/BananaSmoothie.png" onclick="ClickItem('bananaSmoothie_click')"width="100%" height="100%">
-                <img class="gridAction" src="../images/Dollar.png" onclick="ClickItem('sell_click')"width="100%" height="100%">
-            
-                <button class="gridAction" >Buy a banana delivery monkey for 1 monkey.</button>
-                <button class="gridAction" >Buy a banana slicing monkey for 1 monkey.</button>
-                <button class="gridAction" >Buy a smoothie mixing monkey for 1 monkey.</button>
-                <button class="gridAction" >Buy a vending machine for 1 monkey and [<span id="span_vending_m_dollar">15</span>]$.</button>
+            <div class="sectionUpgrades">
+                <p>Buying Automation</p>
+                <p></p>
+                <p></p>
+                <button class="gridUpgrades" >Buy a banana delivery monkey for 1 monkey.</button>
+                <button class="gridUpgrades" >Buy a banana slicing monkey for 1 monkey.</button>
+                <button class="gridUpgrades" >Buy a smoothie mixing monkey for 1 monkey.</button>
+                <button class="gridUpgrades" >Buy a vending machine for 1 monkey and [<span id="span_vending_m_dollar">15</span>]$.</button>
+                <p></p>
+                <P></P>
+                <p>Selling Items</p>
+                <p></p>
+                <p></p>
+                <P>Upgrades</P>
+                <p></p>
+                <P></P>
+
             </div>
         </div>
         <script>
