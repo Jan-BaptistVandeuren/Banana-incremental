@@ -5,8 +5,16 @@
     </head>
 
     <body>
-        <div class="Menu">
-            <h1>Menu</h1>
+        <div class="menu">
+            <div class="menuLeft">
+                <h1>Menu</h1>
+                <button onclick="ProgressBar('search_bar_monkey')"> Search for monkey</button>
+            </div>
+            <div class="menuRight">
+                <div class="monkeySearchBarBackground">
+                    <div class="monkeySearchBarForeground" id="search_bar_monkey" style="height: 24px;width: 0px;"></div>
+                </div>
+            </div>
         </div>
         <div class="Game">
             <div class="sectionRecourcesAndBanana">
@@ -56,10 +64,14 @@
             var bananaSlicesOnClick = 1;
             var slicesToSmoothiesOnClick = 1;
             var smoothiesToDollarOnClick = 1;
+            var monkeyOnSearch = 1;
 
             var bananasToSliceCost = 5;
             var slicesToSmoothiesCost = 5;
             var smoothiesToDollarCost = 5;
+            var searchMonkeySpeed = 100;
+
+            var isBuyingMonkey = false;
 
             function ClickItem(clickedItem){
                 if(clickedItem == 'banana_click'){
@@ -103,12 +115,36 @@
             }
 
             function UpdateData(){
+                document.getElementById("span_monkeys").innerHTML = monkey;
                 document.getElementById("span_money").innerHTML = money;
                 document.getElementById("span_bananas").innerHTML = bananas;
                 document.getElementById("span_bananaSlices").innerHTML = bananaSlices;
                 document.getElementById("span_bananaSmoothies").innerHTML = bananaSmoothies;
             }
 
+            function ProgressBar(bar_id){
+                if(isBuyingMonkey == false){
+                    isBuyingMonkey = true;
+                    var progress_bar = document.getElementById(bar_id);
+                    var width = 1;
+                    var progress = setInterval(frame, searchMonkeySpeed);
+
+                    function frame(){
+                        if(isBuyingMonkey == false){
+                            UpdateData();
+                            clearInterval(progress);
+                        }
+                        if(width>=100){
+                            isBuyingMonkey = false;
+                            monkey += monkeyOnSearch;
+                            width = -1;
+                        }else{
+                            width++;
+                            progress_bar.style.width = width + '%';
+                        }
+                    }
+                }
+            }
         </script>
     </body>
 </HTML>

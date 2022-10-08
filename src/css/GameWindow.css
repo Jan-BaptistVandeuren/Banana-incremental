@@ -6,6 +6,14 @@ body{
     height: 10%;
     width: 100%;
 }
+.menuLeft{
+    float:left;
+    width:50%;
+}
+.menuRight{
+    float:right;
+    width:50%;
+}
 .game{
     height: 90%;
     width: 100%;
@@ -37,4 +45,13 @@ body{
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+/*search-bar*/
+.monkeySearchBarBackground{
+    background-color: white;
+    
+}
+.monkeySearchBarForeground{
+    background-color: green;
 }
