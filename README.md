@@ -7,8 +7,11 @@ https://jan-baptistvandeuren.github.io/Banana-incremental/
 
 todo:
 
-add upgrades
-
-add a tab for costs
-
-add a "end-game" (1M dollars?)
+1) add upgrades
+2) add a tab for costs
+3) find and add a goal or "end-game" (1M dollars?)
+4) make it so that everything starts appearing to leave a sense of discovery
+5) add funny descriptions to make the game more engaging
+6) create better art
+7) ...
+8) move on to a new project
